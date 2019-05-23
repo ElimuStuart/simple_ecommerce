@@ -102,6 +102,7 @@ def process_payment(request):
         'item_name': f'Order {order.id}',
         'invoice': str(order.id),
         'currency_code': 'USD',
+        'custom': 'a custom value',
         'notify_url': f'http://{host}{reverse("paypal-ipn")}',
         'return_url': f'http://{host}{reverse("payment_done")}',
         'cancel_return': f'http://{host}{reverse("payment_cancelled")}',
